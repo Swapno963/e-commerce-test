@@ -52,7 +52,7 @@ describe("ProductCart Component", () => {
     );
   });
 
-  it("displays dropdown menu on clicking three dots icon", () => {
+  it("displays edit and delete on clicking three dots icon", () => {
     const product = { id: 1 };
 
     render(

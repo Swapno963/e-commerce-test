@@ -23,7 +23,7 @@ export default function CreateProduct() {
       const newdata = { ...formData, thumbnail: formData.thumbnail[0] };
       console.log(newdata);
 
-      const response = await axios.post(`${getUrl()}/product/`, newdata, {
+      const response = await axios.post(`${getUrl()}/products/`, newdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

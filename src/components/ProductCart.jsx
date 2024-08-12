@@ -13,7 +13,7 @@ export default function ProductCart({ product, products, setProducts }) {
   const hadelDelete = async (id) => {
     console.log(id);
     try {
-      const response = await axios.delete(`${getUrl()}/product/${id}/`);
+      const response = await axios.delete(`${getUrl()}/products/${id}/`);
       if (response.status === 204) {
         setProducts(products?.filter((item) => item.id !== id));
         console.log("Item deleted successfully");

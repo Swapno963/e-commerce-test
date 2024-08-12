@@ -11,7 +11,7 @@ export default function ProductArea() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${getUrl()}/product/`);
+        const response = await axios.get(`${getUrl()}/products/`);
         setProducts(response.data);
         setLoading(false);
       } catch (err) {

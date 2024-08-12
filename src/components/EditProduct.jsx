@@ -22,7 +22,7 @@ export default function EditProduct() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`${getUrl()}/product/${id}`);
+        const response = await axios.get(`${getUrl()}/products/${id}`);
         setProduct(response.data);
         setLoading(false);
       } catch (err) {
@@ -55,7 +55,7 @@ export default function EditProduct() {
       console.log(newdata);
 
       const response = await axios.patch(
-        `${getUrl()}/product/${id}/`,
+        `${getUrl()}/products/${id}/`,
         newdata,
         {
           headers: {
