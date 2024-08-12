@@ -44,7 +44,12 @@ export default function ProductArea() {
         {/* <Login /> */}
         <div className="grid grid-cols-3 gap-5">
           {products?.map((product) => (
-            <ProductCart key={product.id} product={product} />
+            <ProductCart
+              key={product.id}
+              product={product}
+              products={products}
+              setProducts={setProducts}
+            />
           ))}
         </div>
       </div>
