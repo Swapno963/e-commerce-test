@@ -46,7 +46,7 @@ export default function ProductCart({ product, products, setProducts }) {
             <div className="absolute ml-[257px] mb-[50px] mt-2 w-24 bg-white border border-gray-300 rounded-lg shadow-lg z-10">
               <ul className="py-1">
                 <li
-                  onClick={() => navigate("/edit")}
+                  onClick={() => navigate(`/edit/${product?.id}`)}
                   className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"
                 >
                   Edit
@@ -62,7 +62,9 @@ export default function ProductCart({ product, products, setProducts }) {
           )}
         </div>
 
-        <p className="text-gray-600 mt-2">{product?.description}</p>
+        <p className="text-gray-600 mt-2">
+          {product?.description.slice(0, 50)}
+        </p>
         <div className="mt-4 flex items-center justify-between">
           <span className="text-gray-800 text-sm font-bold">
             {" "}

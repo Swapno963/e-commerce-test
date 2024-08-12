@@ -22,6 +22,7 @@ export default function ProductArea() {
 
     fetchProducts();
   }, []);
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-300 font-bold text-3xl">
