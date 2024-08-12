@@ -1,5 +1,9 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { getUrl } from "../lib/index";
 import Field from "./Field";
+
 export default function Login() {
   const {
     register,
@@ -7,8 +11,25 @@ export default function Login() {
     formState: { errors },
     setError,
   } = useForm();
+  const navigate = useNavigate();
+
   const submitForm = async (formData) => {
     console.log(formData);
+
+    try {
+      const response = await axios.post(`${getUrl()}/auth/login/`, formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log("Response is:", response.data);
+      if (response.data.token) {
+        console.log("user created");
+        navigate("/");
+      }
+    } catch (error) {
+      console.log("Error creating product:", error);
+    }
   };
   return (
     <div className=" md:w-2/5 mx-auto h-screen flex  items-center">

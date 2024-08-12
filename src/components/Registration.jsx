@@ -16,7 +16,6 @@ export default function Registration() {
 
   const submitForm = async (formData) => {
     console.log(formData);
-    // console.log(process.env.REACT_APP_API_URL);
     if (formData.password != formData.confirm_password) {
       alert("Please enter same password");
       console.log("Please enter same password");
