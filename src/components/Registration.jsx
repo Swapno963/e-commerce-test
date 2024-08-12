@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import { getUrl } from "../lib/index";
 import Field from "./Field";
 
@@ -42,7 +41,6 @@ export default function Registration() {
   };
   return (
     <div>
-      <ToastContainer />
       <div className=" md:w-2/5 mx-auto h-screen flex  items-center">
         <form
           onSubmit={handleSubmit(submitForm)}
