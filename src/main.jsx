@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "../src/components/NavBar";
 import CreateProduct from "./components/CreateProduct";
 import EditProduct from "./components/EditProduct";
+import Footer from "./components/Footer";
 import Login from "./components/Login";
 import ProductArea from "./components/ProductArea";
 import Registration from "./components/Registration";
@@ -23,7 +24,6 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Registration />,
   },
-
   {
     path: "/create",
     element: <CreateProduct />,
@@ -37,5 +37,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Navbar />
     <RouterProvider router={router} />
+    <Footer />
   </React.StrictMode>
 );

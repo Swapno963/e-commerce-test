@@ -20,8 +20,6 @@ export default function NavBar() {
         <div className="flex justify-center  text-white font-bold gap-8">
           <a href="login">Log In</a>
           <a href="register">Register</a>
-
-          {/* <p>Cart</p> */}
         </div>
       </div>
     </div>

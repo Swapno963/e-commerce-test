@@ -1,15 +1,15 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getUrl } from "../lib/index";
-
 import three_dot from "../assets/3_dots.png";
 import product_img from "../assets/image_not_found.png";
+import { getUrl } from "../lib/index";
+
 export default function ProductCart({ product, products, setProducts }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  console.log(product);
   const hadelDelete = async (id) => {
     console.log(id);
     try {

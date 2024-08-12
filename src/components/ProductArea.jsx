@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getUrl } from "../lib/index";
 import ProductCart from "./ProductCart";
 import Topbanner from "./Topbanner";
@@ -25,7 +25,7 @@ export default function ProductArea() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen bg-gray-300 font-bold text-3xl">
+      <div className="flex justify-center items-center h-screen bg-gray-300 font-bold text-3xl text-white">
         Loading...
       </div>
     );
@@ -42,7 +42,7 @@ export default function ProductArea() {
     <div>
       <Topbanner />
       <div className="flex mx-auto md:w-3/5">
-        {/* <Login /> */}
+        {/* All products are hear */}
         <div className="grid grid-cols-3 gap-5">
           {products?.map((product) => (
             <ProductCart

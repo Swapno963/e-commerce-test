@@ -1,4 +1,3 @@
-import img1 from "../assets/top-1.jpg";
 import img2 from "../assets/top-2.png";
 import img3 from "../assets/top-3.jpg";
 import img4 from "../assets/top-4.jpg";
@@ -19,7 +18,7 @@ export default function Topbanner() {
     { id: 11, name: "WSports & Outdoors" },
     { id: 12, name: "Automotive & Motorbike" },
   ];
-  const slides = [img1, img2, img3, img4, img5];
+  const slides = [img2, img3, img4, img5];
   return (
     <div className=" w-4/5 grid grid-cols-12 min-h-40 mx-auto gap-4">
       <div className="bg-gray-100 rounded-md  sm:col-span-2 col-span-12 pl-4 my-12  py-3 max-h-[70%]">
