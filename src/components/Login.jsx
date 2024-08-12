@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { getUrl } from "../lib/index";
@@ -9,7 +10,6 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm();
   const navigate = useNavigate();
 
@@ -31,6 +31,7 @@ export default function Login() {
       console.log("Error creating product:", error);
     }
   };
+
   return (
     <div className=" md:w-2/5 mx-auto h-screen flex  items-center">
       <form
@@ -46,7 +47,6 @@ export default function Login() {
               id="email"
               name="email"
               className={`w-full p-3 bg-gray-400 border
-                // eslint-disable-next-line no-extra-boolean-cast
                 ${
                   errors.email ? "border-red-500" : ""
                 } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
@@ -67,7 +67,6 @@ export default function Login() {
               id="password"
               name="password"
               className={`w-full p-3 bg-gray-400 border
-                // eslint-disable-next-line no-extra-boolean-cast
                 ${
                   errors.password ? "border-red-500" : ""
                 } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
@@ -84,7 +83,7 @@ export default function Login() {
           </button>
         </div>
         <p className="text-center">
-          Don't have an account?{" "}
+          Do not have an account?{" "}
           <a href="/register" className="text-indigo-600 hover:underline">
             Register
           </a>

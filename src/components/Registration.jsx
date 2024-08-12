@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { getUrl } from "../lib/index";
@@ -9,7 +10,6 @@ export default function Registration() {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm();
   const navigate = useNavigate();
 
@@ -101,7 +101,7 @@ export default function Registration() {
           </div>
           {/* password */}
           <div className="mb-6">
-            <Field label="Password" error={errors.password}>
+            <Field label="Enter Password" error={errors.password}>
               <input
                 {...register("password", {
                   required: "Password Id is required!",
@@ -112,7 +112,7 @@ export default function Registration() {
                 })}
                 type="password"
                 id="password"
-                name="password"
+                name=""
                 className={`w-full p-3 bg-gray-400 border
             // eslint-disable-next-line no-extra-boolean-cast
             ${
@@ -123,7 +123,7 @@ export default function Registration() {
           </div>
           {/* confirm_password */}
           <div className="mb-6">
-            <Field label="Password" error={errors.confirm_password}>
+            <Field label="confirm password" error={errors.confirm_password}>
               <input
                 {...register("confirm_password", {
                   required: "confirm password Id is required!",
@@ -134,7 +134,7 @@ export default function Registration() {
                 })}
                 type="password"
                 id="confirm_password"
-                name="confirm_password"
+                name=""
                 className={`w-full p-3 bg-gray-400 border
             // eslint-disable-next-line no-extra-boolean-cast
             ${
@@ -153,9 +153,9 @@ export default function Registration() {
             </button>
           </div>
           <p className="text-center">
-            Don't have an account?{" "}
-            <a href="/register" className="text-indigo-600 hover:underline">
-              Register
+            Already have an account?{" "}
+            <a href="/login" className="text-indigo-600 hover:underline">
+              Login
             </a>
           </p>
         </form>

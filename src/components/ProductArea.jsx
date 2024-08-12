@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getUrl } from "../lib/index";
 import ProductCart from "./ProductCart";
 import Topbanner from "./Topbanner";

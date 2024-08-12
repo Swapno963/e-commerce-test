@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import three_dot from "../assets/3_dots.png";
 import product_img from "../assets/image_not_found.png";
@@ -39,7 +39,7 @@ export default function ProductCart({ product, products, setProducts }) {
             <img
               className="w-4 h-6 relative nline-block right-0"
               src={three_dot}
-              alt=""
+              alt="three dots"
             />
           </div>
           {isOpen && (
@@ -63,17 +63,15 @@ export default function ProductCart({ product, products, setProducts }) {
         </div>
 
         <p className="text-gray-600 mt-2">
-          {product?.description.slice(0, 50)}
+          {product?.description?.slice(0, 50)}
         </p>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-gray-800 text-sm font-bold">
-            {" "}
-            Price : ${product?.price}
-          </span>
-          <span className="text-gray-800 text-sm font-bold">
-            {" "}
+          <p className="text-gray-800 text-sm font-bold">
+            Price : $ {product?.price}
+          </p>
+          <p className="text-gray-800 text-sm font-bold">
             Quantity: {product?.quantity}
-          </span>
+          </p>
         </div>
       </div>
     </div>

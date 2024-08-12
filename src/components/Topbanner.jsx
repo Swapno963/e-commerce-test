@@ -1,8 +1,10 @@
+import React from "react";
 import img2 from "../assets/top-2.png";
 import img3 from "../assets/top-3.jpg";
 import img4 from "../assets/top-4.jpg";
 import img5 from "../assets/top-5.jpg";
 import TopBannerCarosel from "./TopBannerCarosel";
+
 export default function Topbanner() {
   const category = [
     { id: 1, name: "Women's & Girls' Fashion" },

@@ -35,3 +35,5 @@ You can access the live site [here](https://blogify-teal-three.vercel.app/).
 
 - Access the application at `http://localhost:3000`
 - Register a new user or login with existing credentials.
+
+test: vitest and used vitest ui insted of terminal
