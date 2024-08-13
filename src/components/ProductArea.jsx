@@ -9,7 +9,7 @@ export default function ProductArea() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedNumber, setSelectedNumber] = useState(1);
+  const [selectedNumber, setSelectedNumber] = useState(3);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -56,7 +56,7 @@ export default function ProductArea() {
       <div className="flex justify-center mx-auto md:w-4/5  mt-12">
         {/* All products are hear */}
         <div className="grid grid-cols-3 gap-5 ">
-          {products.length > 0 &&
+          {products?.length > 0 &&
             products?.map((product) => (
               <ProductCart
                 key={product.id}

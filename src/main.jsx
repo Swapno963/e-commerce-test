@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import ProductArea from "./components/ProductArea";
 import Registration from "./components/Registration";
+import SearchProducts from "./components/SearchProducts";
 import ErrorPage from "./error-page";
 import "./index.css";
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/detail/:id",
     element: <DetailProduct />,
+  },
+  {
+    path: "/search/:search_str",
+    element: <SearchProducts />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
