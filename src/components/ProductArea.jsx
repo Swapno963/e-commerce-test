@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { getUrl } from "../lib/index";
+import Dropdown from "./Dropdown";
 import ProductCart from "./ProductCart";
 import Topbanner from "./Topbanner";
 
@@ -8,12 +9,17 @@ export default function ProductArea() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedNumber, setSelectedNumber] = useState(1);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${getUrl()}/products/`);
-        setProducts(response.data);
+        const response = await axios.get(
+          `${getUrl()}/products/?limit=${selectedNumber}`
+        );
+        setProducts(response?.data?.results);
         setLoading(false);
+        console.log(response?.data?.results);
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -21,7 +27,7 @@ export default function ProductArea() {
     };
 
     fetchProducts();
-  }, []);
+  }, [selectedNumber]);
 
   if (loading) {
     return (
@@ -41,17 +47,24 @@ export default function ProductArea() {
   return (
     <div>
       <Topbanner />
-      <div className="flex justify-center mx-auto md:w-4/5">
+      <div className="absolute left-[400px]">
+        <Dropdown
+          selectedNumber={selectedNumber}
+          setSelectedNumber={setSelectedNumber}
+        />
+      </div>
+      <div className="flex justify-center mx-auto md:w-4/5  mt-12">
         {/* All products are hear */}
         <div className="grid grid-cols-3 gap-5 ">
-          {products?.map((product) => (
-            <ProductCart
-              key={product.id}
-              product={product}
-              products={products}
-              setProducts={setProducts}
-            />
-          ))}
+          {products.length > 0 &&
+            products?.map((product) => (
+              <ProductCart
+                key={product.id}
+                product={product}
+                products={products}
+                setProducts={setProducts}
+              />
+            ))}
         </div>
       </div>
     </div>
