@@ -9,7 +9,7 @@ export default function ProductArea() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedNumber, setSelectedNumber] = useState(3);
+  const [selectedNumber, setSelectedNumber] = useState(4);
 
   useEffect(() => {
     const fetchProducts = async () => {
