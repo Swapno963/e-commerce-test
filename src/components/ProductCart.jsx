@@ -24,7 +24,7 @@ export default function ProductCart({ product, products, setProducts }) {
     }
   };
   return (
-    <div className=" w-full max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="col-span-3 sm:col-span-1 w-[350px] mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
       <img
         className="w-full h-48 object-cover object-center"
         src={product?.thumbnail ? product?.thumbnail : product_img}
@@ -46,8 +46,8 @@ export default function ProductCart({ product, products, setProducts }) {
             />
           </div>
           {isOpen && (
-            <div className="absolute ml-[257px] mb-[50px] mt-2 w-24 bg-white border border-gray-300 rounded-lg shadow-lg z-10">
-              <ul className="py-1">
+            <div className="absolute ml-[170px] sm:ml-[340px] mb-[50px] mt-2 w-24 bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+              <ul className="py-1 ">
                 <li
                   onClick={() => navigate(`/edit/${product?.id}`)}
                   className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"

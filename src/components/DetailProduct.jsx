@@ -50,7 +50,7 @@ export default function DetailProduct() {
           />
         </div>
 
-        <div className="w-full md:w-1/2 md:pl-6">
+        <div className="w-full md:w-1/2 md:pl-6 pt-12 ">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">
             {product?.name}
           </h1>

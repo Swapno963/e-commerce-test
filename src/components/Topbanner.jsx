@@ -18,19 +18,19 @@ export default function Topbanner() {
     { id: 9, name: "Groceries & Pets" },
     { id: 10, name: "Home & Lifestyle" },
     { id: 11, name: "WSports & Outdoors" },
-    { id: 12, name: "Automotive & Motorbike" },
+    // { id: 12, name: "Automotive & Motorbike" },
   ];
   const slides = [img2, img3, img4, img5];
   return (
     <div className=" w-4/5 grid grid-cols-12 min-h-40 mx-auto gap-4">
-      <div className="bg-gray-100 rounded-md  sm:col-span-2 col-span-12 pl-4 my-12  py-3 max-h-[70%]">
+      <div className=" bg-gray-100 rounded-md  sm:col-span-3 col-span-12 pl-4 my-12 pb-[80px]  py-3 max-h-[70%]">
         {category?.map((ct) => (
           <p key={ct?.id} className="text-gray-500 text-lg pb-1 font-semibold">
             {ct?.name}
           </p>
         ))}
       </div>
-      <div className="col-span-12 mt-6 rounded-md sm:col-span-10  py-6">
+      <div className="col-span-12 sm:mt-6 rounded-md  ed:col-span-10 sm:col-span-9   py-6">
         <TopBannerCarosel slides={slides} />
       </div>
     </div>

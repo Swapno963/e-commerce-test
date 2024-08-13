@@ -41,9 +41,9 @@ export default function ProductArea() {
   return (
     <div>
       <Topbanner />
-      <div className="flex mx-auto md:w-3/5">
+      <div className="flex justify-center mx-auto md:w-4/5">
         {/* All products are hear */}
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-3 gap-5 ">
           {products?.map((product) => (
             <ProductCart
               key={product.id}

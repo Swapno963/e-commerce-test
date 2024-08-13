@@ -17,10 +17,16 @@ export default function NavBar() {
             id=""
           />
         </div>
-        <div className="flex justify-center  text-white font-bold gap-8">
-          <a href="/create">Create product</a>
-          <a href="/login">Log In</a>
-          <a href="/register">Register</a>
+        <div className="flex justify-center text-gray-100  font-bold gap-8 sm:pb-0 py-4">
+          <a className="hover:text-white" href="/create">
+            Create product
+          </a>
+          <a className="hover:text-white" href="/login">
+            Log In
+          </a>
+          <a className="hover:text-white" href="/register">
+            Register
+          </a>
         </div>
       </div>
     </div>
