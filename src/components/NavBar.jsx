@@ -1,9 +1,7 @@
-import { useState } from "React";
+import React, { useState } from "react";
 import daraz from "../assets/daraz.png";
 
 export default function NavBar() {
-  // const navigate = useNavigate();
-
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -12,8 +10,6 @@ export default function NavBar() {
   const handleSearch = (event) => {
     event.preventDefault();
     console.log("Submitted value:", inputValue);
-    // history.push("/cart");
-    // navigate(`/search/${inputValue}`);
   };
   return (
     <div>
