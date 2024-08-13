@@ -20,10 +20,7 @@ export default function CreateProduct() {
       return "";
     }
     try {
-      const newdata = { ...formData, thumbnail: formData.thumbnail[0] };
-      console.log(newdata);
-
-      const response = await axios.post(`${getUrl()}/products/`, newdata, {
+      const response = await axios.post(`${getUrl()}/products/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -56,9 +53,9 @@ export default function CreateProduct() {
                 id="name"
                 name="name"
                 className={`w-full p-3 bg-gray-400 border
-        ${
-          errors.email ? "border-red-500" : ""
-        } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
+                        ${
+                          errors.email ? "border-red-500" : ""
+                        } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
               />
             </Field>
           </div>
@@ -106,23 +103,6 @@ export default function CreateProduct() {
                 type="text"
                 id="quantity"
                 name="quantity"
-                className={`w-full p-3 bg-gray-400 border
-        ${
-          errors.email ? "border-red-500" : ""
-        } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
-              />
-            </Field>
-          </div>
-          {/* Image */}
-          <div className="mb-6">
-            <Field label="thumbnail " error={errors.quantity}>
-              <input
-                type="file"
-                {...register("thumbnail", {
-                  required: "thumbnail Id is required!",
-                })}
-                id="thumbnail"
-                name="thumbnail"
                 className={`w-full p-3 bg-gray-400 border
         ${
           errors.email ? "border-red-500" : ""

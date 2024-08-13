@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "../src/components/NavBar";
 import CreateProduct from "./components/CreateProduct";
+import DetailProduct from "./components/DetailProduct";
 import EditProduct from "./components/EditProduct";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/edit/:id",
     element: <EditProduct />,
+  },
+  {
+    path: "/detail/:id",
+    element: <DetailProduct />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -32,9 +32,12 @@ export default function ProductCart({ product, products, setProducts }) {
       />
       <div className="p-4">
         <div className="mt-4 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-800">
+          <a
+            href={`/detail/${product?.id}`}
+            className="text-xl font-semibold text-gray-800 cursor-pointer"
+          >
             {product?.name}
-          </h2>
+          </a>
           <div className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
             <img
               className="w-4 h-6 relative nline-block right-0"

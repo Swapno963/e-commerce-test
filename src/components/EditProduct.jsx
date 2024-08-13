@@ -51,12 +51,9 @@ export default function EditProduct() {
   const submitForm = async (formData) => {
     console.log(formData);
     try {
-      const newdata = { ...formData, thumbnail: formData.thumbnail[0] };
-      console.log(newdata);
-
       const response = await axios.patch(
         `${getUrl()}/products/${id}/`,
-        newdata,
+        formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -148,23 +145,6 @@ export default function EditProduct() {
                             ${
                               errors.email ? "border-red-500" : ""
                             } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
-              />
-            </Field>
-          </div>
-          {/* Image */}
-          <div className="mb-6">
-            <Field label="Thumbnail " error={errors.quantity}>
-              <input
-                type="file"
-                {...register("thumbnail", {
-                  required: "thumbnail Id is required!",
-                })}
-                id="thumbnail"
-                name="thumbnail"
-                className={`w-full p-3 bg-gray-400 border
-                    ${
-                      errors.email ? "border-red-500" : ""
-                    } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
               />
             </Field>
           </div>

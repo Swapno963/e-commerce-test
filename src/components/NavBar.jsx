@@ -18,8 +18,9 @@ export default function NavBar() {
           />
         </div>
         <div className="flex justify-center  text-white font-bold gap-8">
-          <a href="login">Log In</a>
-          <a href="register">Register</a>
+          <a href="/create">Create product</a>
+          <a href="/login">Log In</a>
+          <a href="/register">Register</a>
         </div>
       </div>
     </div>
