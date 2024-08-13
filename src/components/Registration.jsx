@@ -33,7 +33,7 @@ export default function Registration() {
       console.log("Response is:", response.data);
       if (response.data?.user_id > 0) {
         console.log("user created");
-        navigate("/");
+        navigate("/login");
       }
     } catch (error) {
       console.log("Error creating product:", error);
@@ -104,7 +104,7 @@ export default function Registration() {
             <Field label="Enter Password" error={errors.password}>
               <input
                 {...register("password", {
-                  required: "Password Id is required!",
+                  required: "Password  is required!",
                   minLength: {
                     value: 8,
                     message: "Your password must be at least 8 characters!",
@@ -112,7 +112,7 @@ export default function Registration() {
                 })}
                 type="password"
                 id="password"
-                name=""
+                name="password"
                 className={`w-full p-3 bg-gray-400 border
             // eslint-disable-next-line no-extra-boolean-cast
             ${
@@ -126,7 +126,7 @@ export default function Registration() {
             <Field label="confirm password" error={errors.confirm_password}>
               <input
                 {...register("confirm_password", {
-                  required: "confirm password Id is required!",
+                  required: "confirm password  is required!",
                   minLength: {
                     value: 8,
                     message: "Your password must be at least 8 characters!",
@@ -134,11 +134,11 @@ export default function Registration() {
                 })}
                 type="password"
                 id="confirm_password"
-                name=""
+                name="confirm_password"
                 className={`w-full p-3 bg-gray-400 border
             // eslint-disable-next-line no-extra-boolean-cast
             ${
-              errors.password ? "border-red-500" : ""
+              errors.confirm_password ? "border-red-500" : ""
             } border-white/20 rounded-md focus:outline-none focus:border-indigo-500`}
               />
             </Field>
@@ -149,7 +149,7 @@ export default function Registration() {
               type="submit"
               className="w-full bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
             >
-              Login
+              Register
             </button>
           </div>
           <p className="text-center">
