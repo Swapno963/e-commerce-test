@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import daraz from "../assets/daraz.png";
 
 export default function NavBar() {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -10,6 +13,7 @@ export default function NavBar() {
   const handleSearch = (event) => {
     event.preventDefault();
     console.log("Submitted value:", inputValue);
+    navigate(`/search/${inputValue}`);
   };
   return (
     <div>
@@ -22,7 +26,7 @@ export default function NavBar() {
         <div className="flex justify-center">
           <input
             onChange={handleInputChange}
-            className="h-[30px]  rounded-md sm:w-[399]  w-[343px] py-4"
+            className="h-[40px] rounded-lg sm:w-[400px] w-[343px] py-2 px-3 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm transition duration-300 ease-in-out"
             type="text"
             name=""
             id=""
