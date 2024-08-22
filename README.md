@@ -59,3 +59,9 @@ You can access the live site [here](https://e-commerce-test-two.vercel.app/)
 ```sh
 npm run test:ui
 ```
+
+## Contact
+
+If you have any questions or feedback, feel free to contact me:
+
+- Swapno Mondol - [Linkedin](https://www.linkedin.com/in/swapno-mondol/)- [Facebook](https://www.facebook.com/profile.php?id=100090206887787) - swapno963@gmail.com
